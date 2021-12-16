@@ -44,8 +44,6 @@ public class Dictionary {
     }
 
 
-
-
     public void removeSlang(String slang){
         this.data.remove(slang);
     }
@@ -70,9 +68,9 @@ public class Dictionary {
 
     public static ArrayList<String> lineMeans(String str){
         ArrayList<String> means = new ArrayList<String>();
-        while(str.indexOf(',') != -1 ){
-            String mean = str.substring(0,str.indexOf(','));
-            str = str.substring(str.indexOf(',')+1);
+        while(str.indexOf('|') != -1 ){
+            String mean = str.substring(0,str.indexOf('|'));
+            str = str.substring(str.indexOf('|')+1);
             if(mean.charAt(0) == ' '){
                 mean = mean.replace(" ","");
             }
@@ -102,8 +100,17 @@ public class Dictionary {
         catch(IOException e){
         }
     }
+
     public int checkExistence(String slang){
         if(this.data.containsKey(slang)){
+            return 1;
+        }
+        return 0;
+    }
+
+    public int checkValue(String slang,String mean){
+        ArrayList<String> means = this.data.get(slang);
+        if(means.contains(mean)){
             return 1;
         }
         return 0;
@@ -123,7 +130,7 @@ public class Dictionary {
         String result = "";
         int i = 0;
         for(; i < means.size() - 1;i++){
-            result += means.get(i) + ", ";
+            result += means.get(i) + "| ";
         }
         result += means.get(i);
         return result;
@@ -174,7 +181,6 @@ public class Dictionary {
         ArrayList<String> means = this.data.get(slang);
         return slang;
     }
-
 
 
     @Override

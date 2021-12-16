@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Random;
 import javax.swing.JOptionPane;
 
 /*
@@ -17,6 +18,7 @@ public class GUIdictionary extends javax.swing.JFrame {
     private String nameHistory = "history.txt";
     private String nameData = "slang.txt";
     private String nameBackUp = "backup.txt";
+    private int chooseGame = 0;
     /**
      * Creates new form GUIdictionary
      */
@@ -104,16 +106,37 @@ public class GUIdictionary extends javax.swing.JFrame {
         EditConfirmButton = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTextArea5 = new javax.swing.JTextArea();
+        Game = new javax.swing.JPanel();
+        jPanel18 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        jPanel21 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        Game1Button = new javax.swing.JButton();
+        Game2Button = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        PlayGame = new javax.swing.JPanel();
+        jPanel22 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        jPanel23 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        Answer1Button = new javax.swing.JButton();
+        Answer2Button = new javax.swing.JButton();
+        Answer3Button = new javax.swing.JButton();
+        Answer4Button = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
         HomeButton = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        AddSlangButton = new javax.swing.JButton();
         HistoryButton = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
+        RandomButton = new javax.swing.JButton();
         ResetButton = new javax.swing.JButton();
+        GameButton = new javax.swing.JButton();
+        AboutButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
         jLabel1.setText("Slang Dictionary");
@@ -121,6 +144,8 @@ public class GUIdictionary extends javax.swing.JFrame {
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel1.setDoubleBuffered(true);
         jPanel1.add(jLabel1);
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel2.setText("Bạn có biết: ");
@@ -164,11 +189,11 @@ public class GUIdictionary extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jLabel4.setText("Số Slang hiện có: ");
+        jLabel4.setText("Number of slangs available:");
 
         jLabel5.setText("jLabel5");
 
-        jLabel6.setText("Nhập dữ liệu để tìm kiếm:");
+        jLabel6.setText("Search:");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -189,9 +214,9 @@ public class GUIdictionary extends javax.swing.JFrame {
                             .addComponent(jScrollPane1))
                         .addContainerGap())))
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(38, 38, 38)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -204,8 +229,8 @@ public class GUIdictionary extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -252,7 +277,7 @@ public class GUIdictionary extends javax.swing.JFrame {
         jTextField3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel10.setText("You can input many definition but they must be separated by commas  ");
+        jLabel10.setText("You can input many definition but they must be separated by \"|\"  ");
 
         jButton8.setText("Confirm");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -514,7 +539,7 @@ public class GUIdictionary extends javax.swing.JFrame {
                     .addGroup(jPanel20Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel17)))
-                .addContainerGap(177, Short.MAX_VALUE))
+                .addContainerGap(173, Short.MAX_VALUE))
             .addComponent(jScrollPane5)
         );
         jPanel20Layout.setVerticalGroup(
@@ -556,12 +581,193 @@ public class GUIdictionary extends javax.swing.JFrame {
 
         jPanel3.add(EditSlang, "card2");
 
-        jButton3.setText("Add Slang");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel18.setText("GAME");
+        jPanel18.add(jLabel18);
+
+        Game1Button.setText("GAME 1");
+        Game1Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                Game1ButtonActionPerformed(evt);
             }
         });
+
+        Game2Button.setText("GAME 2");
+        Game2Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Game2ButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel19.setText("Game 1: You find definition correct when you have one slang word ");
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel20.setText("Game 2: You find slang word correct when you have one definition ");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(Game1Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Game2Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Game2Button, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Game1Button, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
+        jPanel21.setLayout(jPanel21Layout);
+        jPanel21Layout.setHorizontalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel21Layout.setVerticalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout GameLayout = new javax.swing.GroupLayout(Game);
+        Game.setLayout(GameLayout);
+        GameLayout.setHorizontalGroup(
+            GameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(GameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        GameLayout.setVerticalGroup(
+            GameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel3.add(Game, "card2");
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel21.setText("Game 1");
+        jPanel22.add(jLabel21);
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel22.setText("jLabel22");
+        jPanel8.add(jLabel22);
+
+        Answer1Button.setText("GAME 1");
+        Answer1Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Answer1ButtonActionPerformed(evt);
+            }
+        });
+
+        Answer2Button.setText("GAME 1");
+        Answer2Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Answer2ButtonActionPerformed(evt);
+            }
+        });
+
+        Answer3Button.setText("GAME 1");
+        Answer3Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Answer3ButtonActionPerformed(evt);
+            }
+        });
+
+        Answer4Button.setText("GAME 1");
+        Answer4Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Answer4ButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Answer1Button, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Answer3Button, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Answer4Button, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Answer2Button, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(23, 23, 23))))
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Answer1Button, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Answer2Button, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Answer3Button, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Answer4Button, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
+        );
+
+        javax.swing.GroupLayout PlayGameLayout = new javax.swing.GroupLayout(PlayGame);
+        PlayGame.setLayout(PlayGameLayout);
+        PlayGameLayout.setHorizontalGroup(
+            PlayGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PlayGameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PlayGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        PlayGameLayout.setVerticalGroup(
+            PlayGameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PlayGameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel3.add(PlayGame, "card2");
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         HomeButton.setText("Home");
         HomeButton.addActionListener(new java.awt.event.ActionListener() {
@@ -570,10 +776,10 @@ public class GUIdictionary extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setText("About");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        AddSlangButton.setText("Add Slang");
+        AddSlangButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                AddSlangButtonActionPerformed(evt);
             }
         });
 
@@ -584,17 +790,10 @@ public class GUIdictionary extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setText("Game");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        RandomButton.setText("Random");
+        RandomButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-
-        jButton11.setText("Random");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                RandomButtonActionPerformed(evt);
             }
         });
 
@@ -602,6 +801,20 @@ public class GUIdictionary extends javax.swing.JFrame {
         ResetButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ResetButtonActionPerformed(evt);
+            }
+        });
+
+        GameButton.setText("Game");
+        GameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GameButtonActionPerformed(evt);
+            }
+        });
+
+        AboutButton.setText("About");
+        AboutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AboutButtonActionPerformed(evt);
             }
         });
 
@@ -614,17 +827,17 @@ public class GUIdictionary extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AddSlangButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(HistoryButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(GameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(RandomButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ResetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(HomeButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(AboutButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -633,17 +846,17 @@ public class GUIdictionary extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(HomeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AddSlangButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(HistoryButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RandomButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(ResetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(GameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AboutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -702,13 +915,18 @@ public class GUIdictionary extends javax.swing.JFrame {
         jPanel3.revalidate();
     }//GEN-LAST:event_HistoryButtonActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void GameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GameButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+        jPanel3.removeAll();
+        
+        jPanel3.add(Game);
+        jPanel3.repaint();
+        jPanel3.revalidate();
+    }//GEN-LAST:event_GameButtonActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void AboutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AboutButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_AboutButtonActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
@@ -738,7 +956,7 @@ public class GUIdictionary extends javax.swing.JFrame {
         }
         else{
             data.addSlang(slang, means);
-            JOptionPane.showMessageDialog(this,"add Slang success");
+            JOptionPane.showMessageDialog(this,"Add Slang success");
         }
         if(flag != 1){
             jTextField3.setText("");
@@ -750,14 +968,14 @@ public class GUIdictionary extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton8ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void AddSlangButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddSlangButtonActionPerformed
         // TODO add your handling code here:
         jPanel3.removeAll();
         
         jPanel3.add(AddSlang);
         jPanel3.repaint();
         jPanel3.revalidate();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_AddSlangButtonActionPerformed
 
     private void EditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditButtonActionPerformed
         // TODO add your handling code here:
@@ -815,9 +1033,19 @@ public class GUIdictionary extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void RandomButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RandomButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton11ActionPerformed
+        String slang = data.randomSlang();
+        ArrayList<String> means = data.findSlang(slang);
+        jTextArea3.setText(slang);
+        jTextArea4.setText(Dictionary.meanstoString(means));
+
+        jPanel3.removeAll();
+
+        jPanel3.add(DetailSlang);
+        jPanel3.repaint();
+        jPanel3.revalidate();
+    }//GEN-LAST:event_RandomButtonActionPerformed
 
     private void ResetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetButtonActionPerformed
         // TODO add your handling code here:
@@ -847,6 +1075,240 @@ public class GUIdictionary extends javax.swing.JFrame {
         jTextArea1.setText(data.toString());
         HomeButton.doClick();            
     }//GEN-LAST:event_EditConfirmButtonActionPerformed
+
+    private void Game1ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Game1ButtonActionPerformed
+        // TODO add your handling code here:
+        String slang = data.randomSlang();
+        String mean_correct = data.findSlang(slang).get(0);
+        ArrayList<String> mean_fail = new ArrayList<String>();
+        for(int i= 0 ; i < 3;i++){
+            String slang_fail = data.randomSlang();
+            while(slang_fail.indexOf(slang) != -1){
+               slang_fail = data.randomSlang();
+            }
+            mean_fail.add(data.findSlang(slang_fail).get(0));
+        }
+        
+        // set answer correct
+        Random generator = new Random();
+        int index = generator.nextInt(4) + 1;
+        if(index == 1){
+            Answer1Button.setText(mean_correct);
+        }
+        else if(index == 2){
+            Answer2Button.setText(mean_correct);
+        }
+        else if(index == 3){
+            Answer3Button.setText(mean_correct);
+        }
+        else{
+            Answer4Button.setText(mean_correct);
+        }
+        int j = 0;
+        for(int i = 1;i <= 4;i++){
+            if(i == 1 && i != index){
+                Answer1Button.setText(mean_fail.get(j));
+                j++;
+            }
+            else if(i == 2 && i != index){
+                Answer2Button.setText(mean_fail.get(j));
+                j++;
+            }
+            else if(i == 3 && i != index){
+                Answer3Button.setText(mean_fail.get(j));
+                j++;
+            }
+            else if(i == 4 && i != index){
+                Answer4Button.setText(mean_fail.get(j));
+                j++;
+            }
+        }
+        
+        jLabel21.setText("What is the slang mean?");
+        jLabel22.setText(slang);
+        chooseGame = 1;
+        jPanel3.removeAll();
+
+        jPanel3.add(PlayGame);
+        jPanel3.repaint();
+        jPanel3.revalidate();
+    }//GEN-LAST:event_Game1ButtonActionPerformed
+
+    private void Answer1ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Answer1ButtonActionPerformed
+        // TODO add your handling code here:
+        if(chooseGame == 1){
+            String slang = jLabel22.getText();
+            String mean = Answer1Button.getText();
+            if(data.checkValue(slang, mean) == 1){
+                JOptionPane.showMessageDialog(this,"Congratulations! You are right");
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Good luck! You were wrong");
+            }
+        }else if(chooseGame == 2){
+            String mean = jLabel22.getText();
+            String slang = Answer1Button.getText();
+            if(data.checkValue(slang, mean) == 1){
+                JOptionPane.showMessageDialog(this,"Congratulations! You are right");
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Good luck! You were wrong");
+            }
+        }
+        chooseGame = 0;
+        jPanel3.removeAll();
+
+        jPanel3.add(Game);
+        jPanel3.repaint();
+        jPanel3.revalidate();
+    }//GEN-LAST:event_Answer1ButtonActionPerformed
+
+    private void Answer2ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Answer2ButtonActionPerformed
+        // TODO add your handling code here:
+        if(chooseGame == 1){
+            String slang = jLabel22.getText();
+            String mean = Answer2Button.getText();
+            if(data.checkValue(slang, mean) == 1){
+                JOptionPane.showMessageDialog(this,"Congratulations! You are right");
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Good luck! You were wrong");
+            }
+        }else if(chooseGame == 2){
+            String mean = jLabel22.getText();
+            String slang = Answer2Button.getText();
+            if(data.checkValue(slang, mean) == 1){
+                JOptionPane.showMessageDialog(this,"Congratulations! You are right");
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Good luck! You were wrong");
+            }
+        }
+        chooseGame = 0;
+        jPanel3.removeAll();
+
+        jPanel3.add(Game);
+        jPanel3.repaint();
+        jPanel3.revalidate();
+    }//GEN-LAST:event_Answer2ButtonActionPerformed
+
+    private void Answer3ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Answer3ButtonActionPerformed
+        // TODO add your handling code here:
+        if(chooseGame == 1){
+            String slang = jLabel22.getText();
+            String mean = Answer3Button.getText();
+            if(data.checkValue(slang, mean) == 1){
+                JOptionPane.showMessageDialog(this,"Congratulations! You are right");
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Good luck! You were wrong");
+            }
+        }else if(chooseGame == 2){
+            String mean = jLabel22.getText();
+            String slang = Answer3Button.getText();
+            if(data.checkValue(slang, mean) == 1){
+                JOptionPane.showMessageDialog(this,"Congratulations! You are right");
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Good luck! You were wrong");
+            }
+        }
+        chooseGame = 0;
+        jPanel3.removeAll();
+
+        jPanel3.add(Game);
+        jPanel3.repaint();
+        jPanel3.revalidate();
+    }//GEN-LAST:event_Answer3ButtonActionPerformed
+
+    private void Answer4ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Answer4ButtonActionPerformed
+        // TODO add your handling code here:
+        if(chooseGame == 1){
+            String slang = jLabel22.getText();
+            String mean = Answer4Button.getText();
+            if(data.checkValue(slang, mean) == 1){
+                JOptionPane.showMessageDialog(this,"Congratulations! You are right");
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Good luck! You were wrong");
+            }
+        }else if(chooseGame == 2){
+            String mean = jLabel22.getText();
+            String slang = Answer4Button.getText();
+            if(data.checkValue(slang, mean) == 1){
+                JOptionPane.showMessageDialog(this,"Congratulations! You are right");
+            }
+            else{
+                JOptionPane.showMessageDialog(this,"Good luck! You were wrong");
+            }
+        }
+        chooseGame = 0;
+        jPanel3.removeAll();
+
+        jPanel3.add(Game);
+        jPanel3.repaint();
+        jPanel3.revalidate();
+    }//GEN-LAST:event_Answer4ButtonActionPerformed
+
+    private void Game2ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Game2ButtonActionPerformed
+        // TODO add your handling code here:
+        String slang = data.randomSlang();
+        String mean_correct = data.findSlang(slang).get(0);
+        ArrayList<String> slangs_fail = new ArrayList<String>();
+        for(int i= 0 ; i < 3;i++){
+            String slang_fail = data.randomSlang();
+            while(data.checkValue(slang_fail,mean_correct) == 1){
+               slang_fail = data.randomSlang();
+            }
+            slangs_fail.add(slang_fail);
+        }
+        
+        
+        // set answer correct
+        Random generator = new Random();
+        int index = generator.nextInt(4) + 1;
+        System.out.print(index);
+        if(index == 1){
+            Answer1Button.setText(slang);
+        }
+        else if(index == 2){
+            Answer2Button.setText(slang);
+        }
+        else if(index == 3){
+            Answer3Button.setText(slang);
+        }
+        else{
+            Answer4Button.setText(slang);
+        }
+        int j = 0;
+        for(int i = 1;i <= 4;i++){
+            if(i == 1 && i != index){
+                Answer1Button.setText(slangs_fail.get(j));
+                j++;
+            }
+            else if(i == 2 && i != index){
+                Answer2Button.setText(slangs_fail.get(j));
+                j++;
+            }
+            else if(i == 3 && i != index){
+                Answer3Button.setText(slangs_fail.get(j));
+                j++;
+            }
+            else if(i == 4 && i != index){
+                Answer4Button.setText(slangs_fail.get(j));
+                j++;
+            }
+        }
+        
+        jLabel21.setText("What is the slang?");
+        jLabel22.setText(mean_correct);
+        chooseGame = 2;
+        jPanel3.removeAll();
+
+        jPanel3.add(PlayGame);
+        jPanel3.repaint();
+        jPanel3.revalidate();
+    }//GEN-LAST:event_Game2ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -884,23 +1346,31 @@ public class GUIdictionary extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AboutButton;
     private javax.swing.JPanel AddSlang;
+    private javax.swing.JButton AddSlangButton;
+    private javax.swing.JButton Answer1Button;
+    private javax.swing.JButton Answer2Button;
+    private javax.swing.JButton Answer3Button;
+    private javax.swing.JButton Answer4Button;
     private javax.swing.JPanel DetailSlang;
     private javax.swing.JButton EditButton;
     private javax.swing.JButton EditConfirmButton;
     private javax.swing.JPanel EditSlang;
+    private javax.swing.JPanel Game;
+    private javax.swing.JButton Game1Button;
+    private javax.swing.JButton Game2Button;
+    private javax.swing.JButton GameButton;
     private javax.swing.JButton HistoryButton;
     private javax.swing.JPanel HistoryFind;
     private javax.swing.JPanel Home;
     private javax.swing.JButton HomeButton;
+    private javax.swing.JPanel PlayGame;
+    private javax.swing.JButton RandomButton;
     private javax.swing.JButton RemoveButton;
     private javax.swing.JButton ResetButton;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -911,7 +1381,12 @@ public class GUIdictionary extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -926,13 +1401,19 @@ public class GUIdictionary extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
