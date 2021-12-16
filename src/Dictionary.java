@@ -2,7 +2,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -27,15 +26,30 @@ public class Dictionary {
         this.data.replace(slang,means);
     }
 
+    public void duplicateSlang(String slang,ArrayList<String> means){
+        ArrayList<String> check = this.data.get(slang);
+        int size = check.size();
+        for(int i = 0 ; i < means.size();i++){
+            int flag = 1;
+            for(int j = 0 ;j < size;j++){
+                if(means.get(i).indexOf(check.get(j)) != -1){
+                    flag = 0;
+                    break;
+                }
+            }
+            if(flag == 1){
+                check.add(means.get(i));
+            }
+        }
+    }
+
+
+
 
     public void removeSlang(String slang){
         this.data.remove(slang);
     }
 
-//    public void slangView(){
-//        Set<String> setOfSlang = this.data.keySet();
-//        System.out.println(Arrays.toString(setOfSlang.toArray()));
-//    }
 
     public int countSlang() {
         return this.data.size();
@@ -101,6 +115,16 @@ public class Dictionary {
         for(; i < means.size() - 1;i++){
             result += "- " + means.get(i) + "\n";
         }
+        result += "- " + means.get(i);
+        return result;
+    }
+
+    public static String meanstoString2(ArrayList<String> means){
+        String result = "";
+        int i = 0;
+        for(; i < means.size() - 1;i++){
+            result += means.get(i) + ", ";
+        }
         result += means.get(i);
         return result;
     }
@@ -148,20 +172,9 @@ public class Dictionary {
 
         String slang = keyList.get(index);
         ArrayList<String> means = this.data.get(slang);
-
-//        String result = slang + ": ";
-//        int i = 0;
-//        for(; i < means.size() - 1;i++){
-//            result += means.get(i) + ",";
-//        }
-//        result += means.get(i);
-//        return result;
         return slang;
     }
 
-    public void editSlang(String Slang,ArrayList<String> means){
-        this.data.replace(Slang,means);
-    }
 
 
     @Override
@@ -171,7 +184,7 @@ public class Dictionary {
             result += slang + ": ";
             int i = 0;
             for(; i < data.get(slang).size() - 1;i++){
-                result += data.get(slang).get(i) + ", ";
+                result += data.get(slang).get(i) + " | ";
             }
             result += data.get(slang).get(i) + "\n";
         }

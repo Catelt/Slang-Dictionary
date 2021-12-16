@@ -53,7 +53,7 @@ public class GUIdictionary extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
+        Home = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -65,7 +65,7 @@ public class GUIdictionary extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
+        AddSlang = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
@@ -75,7 +75,7 @@ public class GUIdictionary extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
-        jPanel11 = new javax.swing.JPanel();
+        DetailSlang = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
@@ -86,14 +86,24 @@ public class GUIdictionary extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextArea4 = new javax.swing.JTextArea();
         jPanel14 = new javax.swing.JPanel();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jPanel15 = new javax.swing.JPanel();
+        EditButton = new javax.swing.JButton();
+        RemoveButton = new javax.swing.JButton();
+        HistoryFind = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jPanel17 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
+        EditSlang = new javax.swing.JPanel();
+        jPanel19 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jPanel20 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        EditConfirmButton = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextArea5 = new javax.swing.JTextArea();
         jPanel4 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
         HomeButton = new javax.swing.JButton();
@@ -205,27 +215,27 @@ public class GUIdictionary extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout HomeLayout = new javax.swing.GroupLayout(Home);
+        Home.setLayout(HomeLayout);
+        HomeLayout.setHorizontalGroup(
+            HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HomeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+        HomeLayout.setVerticalGroup(
+            HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomeLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel3.add(jPanel5, "card2");
+        jPanel3.add(Home, "card2");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel7.setText("Add Slang");
@@ -288,20 +298,20 @@ public class GUIdictionary extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+        javax.swing.GroupLayout AddSlangLayout = new javax.swing.GroupLayout(AddSlang);
+        AddSlang.setLayout(AddSlangLayout);
+        AddSlangLayout.setHorizontalGroup(
+            AddSlangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddSlangLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(AddSlangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
+        AddSlangLayout.setVerticalGroup(
+            AddSlangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddSlangLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -309,7 +319,7 @@ public class GUIdictionary extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel3.add(jPanel8, "card2");
+        jPanel3.add(AddSlang, "card2");
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel12.setText("Detail Slang");
@@ -361,17 +371,17 @@ public class GUIdictionary extends javax.swing.JFrame {
                 .addGap(33, 33, 33))
         );
 
-        jButton9.setText("Edit");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        EditButton.setText("Edit");
+        EditButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                EditButtonActionPerformed(evt);
             }
         });
 
-        jButton10.setText("Remove");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        RemoveButton.setText("Remove");
+        RemoveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                RemoveButtonActionPerformed(evt);
             }
         });
 
@@ -381,9 +391,9 @@ public class GUIdictionary extends javax.swing.JFrame {
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addGap(65, 65, 65)
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(EditButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
-                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RemoveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57))
         );
         jPanel14Layout.setVerticalGroup(
@@ -391,26 +401,26 @@ public class GUIdictionary extends javax.swing.JFrame {
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(RemoveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EditButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
+        javax.swing.GroupLayout DetailSlangLayout = new javax.swing.GroupLayout(DetailSlang);
+        DetailSlang.setLayout(DetailSlangLayout);
+        DetailSlangLayout.setHorizontalGroup(
+            DetailSlangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DetailSlangLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(DetailSlangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
+        DetailSlangLayout.setVerticalGroup(
+            DetailSlangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DetailSlangLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -420,7 +430,7 @@ public class GUIdictionary extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel3.add(jPanel11, "card2");
+        jPanel3.add(DetailSlang, "card2");
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel14.setText("History Find");
@@ -441,20 +451,20 @@ public class GUIdictionary extends javax.swing.JFrame {
             .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
-        jPanel15.setLayout(jPanel15Layout);
-        jPanel15Layout.setHorizontalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+        javax.swing.GroupLayout HistoryFindLayout = new javax.swing.GroupLayout(HistoryFind);
+        HistoryFind.setLayout(HistoryFindLayout);
+        HistoryFindLayout.setHorizontalGroup(
+            HistoryFindLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HistoryFindLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(HistoryFindLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel15Layout.setVerticalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel15Layout.createSequentialGroup()
+        HistoryFindLayout.setVerticalGroup(
+            HistoryFindLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HistoryFindLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -462,7 +472,89 @@ public class GUIdictionary extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel3.add(jPanel15, "card2");
+        jPanel3.add(HistoryFind, "card2");
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel15.setText("Edit Slang");
+        jPanel19.add(jLabel15);
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel16.setText("Slang");
+
+        jTextField4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel17.setText("Definition");
+
+        EditConfirmButton.setText("Confirm");
+        EditConfirmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditConfirmButtonActionPerformed(evt);
+            }
+        });
+
+        jTextArea5.setColumns(20);
+        jTextArea5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jTextArea5.setRows(5);
+        jScrollPane5.setViewportView(jTextArea5);
+
+        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
+        jPanel20.setLayout(jPanel20Layout);
+        jPanel20Layout.setHorizontalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTextField4)
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel20Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel16))
+                    .addGroup(jPanel20Layout.createSequentialGroup()
+                        .addGap(164, 164, 164)
+                        .addComponent(EditConfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel20Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel17)))
+                .addContainerGap(177, Short.MAX_VALUE))
+            .addComponent(jScrollPane5)
+        );
+        jPanel20Layout.setVerticalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel16)
+                .addGap(4, 4, 4)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(EditConfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout EditSlangLayout = new javax.swing.GroupLayout(EditSlang);
+        EditSlang.setLayout(EditSlangLayout);
+        EditSlangLayout.setHorizontalGroup(
+            EditSlangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditSlangLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(EditSlangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        EditSlangLayout.setVerticalGroup(
+            EditSlangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EditSlangLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel3.add(EditSlang, "card2");
 
         jButton3.setText("Add Slang");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -591,7 +683,7 @@ public class GUIdictionary extends javax.swing.JFrame {
         // TODO add your handling code here:
         jPanel3.removeAll();
         
-        jPanel3.add(jPanel5);
+        jPanel3.add(Home);
         jPanel3.repaint();
         jPanel3.revalidate();
         
@@ -605,7 +697,7 @@ public class GUIdictionary extends javax.swing.JFrame {
         
         jPanel3.removeAll();
         
-        jPanel3.add(jPanel15);
+        jPanel3.add(HistoryFind);
         jPanel3.repaint();
         jPanel3.revalidate();
     }//GEN-LAST:event_HistoryButtonActionPerformed
@@ -623,29 +715,38 @@ public class GUIdictionary extends javax.swing.JFrame {
         String slang = jTextField3.getText().toUpperCase();
         String meansString = jTextField2.getText();
         ArrayList<String> means = Dictionary.lineMeans(meansString);
+        int flag = 0;
         if(data.checkExistence(slang) != 0){
-            int dialogResult = JOptionPane.showConfirmDialog(this,
-                    "Do you want OVERWRITE","Slang has existenced",
-                    JOptionPane.YES_NO_OPTION,
-                    JOptionPane.QUESTION_MESSAGE);
+            Object[] options = {"Overwrite","Duplicate","Cancel"};
+            int dialogResult = JOptionPane.showOptionDialog(this,
+                    "Slang has existenced","Warning",
+                    JOptionPane.YES_NO_CANCEL_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null, options, options[0]);
+            
             if(dialogResult == JOptionPane.YES_OPTION){
                data.replaceSlang(slang,means);
                JOptionPane.showMessageDialog(this,"Overwrite success");
             }
-            else{
-               data.addSlang(slang, means);
+            else if (dialogResult == JOptionPane.NO_OPTION){
+               data.duplicateSlang(slang, means);
                JOptionPane.showMessageDialog(this,"Duplicate success");
+            }
+            else{
+                flag = 1;
             }
         }
         else{
             data.addSlang(slang, means);
             JOptionPane.showMessageDialog(this,"add Slang success");
         }
-        jTextField3.setText("");
-        jTextField2.setText("");
-        jTextArea1.setText(data.toString());
-        jLabel5.setText(Integer.toString(data.countSlang()));
-        HomeButton.doClick();
+        if(flag != 1){
+            jTextField3.setText("");
+            jTextField2.setText("");
+            jTextArea1.setText(data.toString());
+            jLabel5.setText(Integer.toString(data.countSlang()));
+            HomeButton.doClick();
+        }
         
     }//GEN-LAST:event_jButton8ActionPerformed
 
@@ -653,20 +754,32 @@ public class GUIdictionary extends javax.swing.JFrame {
         // TODO add your handling code here:
         jPanel3.removeAll();
         
-        jPanel3.add(jPanel8);
+        jPanel3.add(AddSlang);
         jPanel3.repaint();
         jPanel3.revalidate();
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void EditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
+        String slang = jTextArea3.getText();
+        jTextArea5.setEnabled(false);
+        ArrayList<String> means = data.findSlang(slang);
+        jTextArea5.setText(slang);
+        jTextField4.setText(Dictionary.meanstoString2(means));
+        
+        jPanel3.removeAll();
+        
+        jPanel3.add(EditSlang);
+        jPanel3.repaint();
+        jPanel3.revalidate();
+        
+    }//GEN-LAST:event_EditButtonActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void RemoveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveButtonActionPerformed
         // TODO add your handling code here:
         String slang = jTextArea3.getText();
         int dialogResult = JOptionPane.showConfirmDialog(this,
-                "DO you want remove this slang?","Warning",
+                "Do you want remove this slang?","Warning",
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.QUESTION_MESSAGE);
         if(dialogResult == JOptionPane.YES_OPTION){
@@ -678,7 +791,7 @@ public class GUIdictionary extends javax.swing.JFrame {
         jTextArea1.setText(data.toString());
         jLabel5.setText(Integer.toString(data.countSlang()));
         HomeButton.doClick();
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_RemoveButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -691,7 +804,7 @@ public class GUIdictionary extends javax.swing.JFrame {
             
             jPanel3.removeAll();
         
-            jPanel3.add(jPanel11);
+            jPanel3.add(DetailSlang);
             jPanel3.repaint();
             jPanel3.revalidate();
             jTextField1.setText("");
@@ -714,6 +827,26 @@ public class GUIdictionary extends javax.swing.JFrame {
         jLabel5.setText(Integer.toString(data.countSlang()));
         HomeButton.doClick();
     }//GEN-LAST:event_ResetButtonActionPerformed
+
+    private void EditConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditConfirmButtonActionPerformed
+        // TODO add your handling code here:
+        String slang = jTextArea5.getText();
+        String meansString = jTextField4.getText();
+        ArrayList<String> means = Dictionary.lineMeans(meansString);
+        int dialogResult = JOptionPane.showConfirmDialog(this,
+                "Do you want edit this slang?","Warning",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+        if(dialogResult == JOptionPane.YES_OPTION){
+           data.replaceSlang(slang,means);
+           JOptionPane.showMessageDialog(this,"Edit success");
+        }
+        
+        jTextArea5.setText("");
+        jTextField4.setText("");
+        jTextArea1.setText(data.toString());
+        HomeButton.doClick();            
+    }//GEN-LAST:event_EditConfirmButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -751,24 +884,33 @@ public class GUIdictionary extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel AddSlang;
+    private javax.swing.JPanel DetailSlang;
+    private javax.swing.JButton EditButton;
+    private javax.swing.JButton EditConfirmButton;
+    private javax.swing.JPanel EditSlang;
     private javax.swing.JButton HistoryButton;
+    private javax.swing.JPanel HistoryFind;
+    private javax.swing.JPanel Home;
     private javax.swing.JButton HomeButton;
+    private javax.swing.JButton RemoveButton;
     private javax.swing.JButton ResetButton;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -779,31 +921,32 @@ public class GUIdictionary extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JTextArea jTextArea5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }
