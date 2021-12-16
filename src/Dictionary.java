@@ -29,10 +29,10 @@ public class Dictionary {
         this.data.remove(slang);
     }
 
-    public void slangView(){
-        Set<String> setOfSlang = this.data.keySet();
-        System.out.println(Arrays.toString(setOfSlang.toArray()));
-    }
+//    public void slangView(){
+//        Set<String> setOfSlang = this.data.keySet();
+//        System.out.println(Arrays.toString(setOfSlang.toArray()));
+//    }
 
     public int countSlang() {
         return this.data.size();
@@ -113,13 +113,14 @@ public class Dictionary {
         String slang = keyList.get(index);
         ArrayList<String> means = this.data.get(slang);
 
-        String result = slang + ": ";
-        int i = 0;
-        for(; i < means.size() - 1;i++){
-            result += means.get(i) + ",";
-        }
-        result += means.get(i);
-        return result;
+//        String result = slang + ": ";
+//        int i = 0;
+//        for(; i < means.size() - 1;i++){
+//            result += means.get(i) + ",";
+//        }
+//        result += means.get(i);
+//        return result;
+        return slang;
     }
 
     public void editSlang(String Slang,ArrayList<String> means){
