@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 /**
@@ -59,8 +56,14 @@ public class Dictionary {
         str = str.substring(index + 1);
         while(str.indexOf('|') != -1 ){
             String mean = str.substring(0,str.indexOf('|'));
-            str = str.substring(str.indexOf('|')+2);
+            str = str.substring(str.indexOf('|')+1);
+            if(mean.charAt(0) == ' '){
+                mean = mean.replace(" ","");
+            }
             means.add(mean);
+        }
+        if(str.charAt(0) == ' '){
+            str = str.replace(" ","");
         }
         means.add(str);
         return slang;
@@ -99,6 +102,28 @@ public class Dictionary {
         }
         catch(IOException e){
         }
+    }
+
+    public void save(String nameFile){
+        try{
+            FileWriter fw = new FileWriter(nameFile);
+
+            for (String slang : this.data.keySet()) {
+                String line = "";
+                line += slang + "`";
+                int i = 0;
+                for(; i < data.get(slang).size() - 1;i++){
+                    line += data.get(slang).get(i) + "| ";
+                }
+                line += data.get(slang).get(i) + "\n";
+                fw.write(line);
+            }
+            fw.close();
+
+        }
+        catch (IOException e){
+        }
+
     }
 
     public int checkExistence(String slang){
@@ -140,11 +165,37 @@ public class Dictionary {
         return this.data.get(slang);
     }
 
+    public ArrayList<String> findDefinition(String mean){
+        ArrayList<String> slangs = new ArrayList<String>();
+        for(String slang: this.data.keySet()){
+            for(int i = 0; i < data.get(slang).size();i++){
+                if(data.get(slang).get(i).contains(mean)){
+                    slangs.add(slang);
+                    break;
+                }
+            }
+        }
+        return slangs;
+    }
+
+    public String slangstoString(ArrayList<String> slangs){
+        String result = "";
+        for(int i = 0; i < slangs.size();i++){
+            result += slangs.get(i) + ": ";
+            int j = 0;
+            for(; j < data.get(slangs.get(i)).size() - 1;j++){
+                result += data.get(slangs.get(i)).get(j) + " | ";
+            }
+            result += data.get(slangs.get(i)).get(j) + "\n";
+        }
+        return result;
+    }
+
     public static void saveHistory(String slang,String nameFile){
         try{
-            FileWriter fw = new FileWriter(nameFile);
-            fw.write(slang + "\n");
-            fw.close();
+            BufferedWriter br = new BufferedWriter(new FileWriter(nameFile,true));
+            br.append(slang + "\n");
+            br.close();
         }
         catch (IOException e){
         }
@@ -167,6 +218,8 @@ public class Dictionary {
         }
         return result;
     }
+
+
 
     public String randomSlang(){
         Random generator = new Random();
@@ -200,6 +253,6 @@ public class Dictionary {
     public static void main(String args[]){
         Dictionary data = new Dictionary();
         data.load("slang.txt");
-        System.out.println(data.randomSlang());
+        data.save("output.txt");
     }
 }

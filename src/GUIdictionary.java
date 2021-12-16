@@ -57,8 +57,8 @@ public class GUIdictionary extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         Home = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        FindSlangButton = new javax.swing.JButton();
+        FindDefinitionButton = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -76,7 +76,7 @@ public class GUIdictionary extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
+        ConfirmAddButton = new javax.swing.JButton();
         DetailSlang = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
@@ -125,6 +125,12 @@ public class GUIdictionary extends javax.swing.JFrame {
         Answer2Button = new javax.swing.JButton();
         Answer3Button = new javax.swing.JButton();
         Answer4Button = new javax.swing.JButton();
+        FindDefinition = new javax.swing.JPanel();
+        jPanel24 = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        jPanel25 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextArea6 = new javax.swing.JTextArea();
         jPanel4 = new javax.swing.JPanel();
         HomeButton = new javax.swing.JButton();
         AddSlangButton = new javax.swing.JButton();
@@ -153,14 +159,19 @@ public class GUIdictionary extends javax.swing.JFrame {
 
         jPanel3.setLayout(new java.awt.CardLayout());
 
-        jButton1.setText("Find Slang");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        FindSlangButton.setText("Find Slang");
+        FindSlangButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                FindSlangButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Find Definition");
+        FindDefinitionButton.setText("Find Definition");
+        FindDefinitionButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FindDefinitionButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -168,9 +179,9 @@ public class GUIdictionary extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(84, 84, 84)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(FindSlangButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(FindDefinitionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(98, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -178,8 +189,8 @@ public class GUIdictionary extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FindSlangButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FindDefinitionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -279,10 +290,10 @@ public class GUIdictionary extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel10.setText("You can input many definition but they must be separated by \"|\"  ");
 
-        jButton8.setText("Confirm");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        ConfirmAddButton.setText("Confirm");
+        ConfirmAddButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                ConfirmAddButtonActionPerformed(evt);
             }
         });
 
@@ -302,7 +313,7 @@ public class GUIdictionary extends javax.swing.JFrame {
                             .addComponent(jLabel10)))
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGap(164, 164, 164)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(ConfirmAddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
@@ -319,7 +330,7 @@ public class GUIdictionary extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ConfirmAddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -767,6 +778,48 @@ public class GUIdictionary extends javax.swing.JFrame {
 
         jPanel3.add(PlayGame, "card2");
 
+        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel23.setText("Find Definition");
+        jPanel24.add(jLabel23);
+
+        jTextArea6.setColumns(20);
+        jTextArea6.setRows(5);
+        jScrollPane6.setViewportView(jTextArea6);
+
+        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
+        jPanel25.setLayout(jPanel25Layout);
+        jPanel25Layout.setHorizontalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane6)
+        );
+        jPanel25Layout.setVerticalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout FindDefinitionLayout = new javax.swing.GroupLayout(FindDefinition);
+        FindDefinition.setLayout(FindDefinitionLayout);
+        FindDefinitionLayout.setHorizontalGroup(
+            FindDefinitionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FindDefinitionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(FindDefinitionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        FindDefinitionLayout.setVerticalGroup(
+            FindDefinitionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FindDefinitionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel3.add(FindDefinition, "card2");
+
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         HomeButton.setText("Home");
@@ -928,10 +981,18 @@ public class GUIdictionary extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_AboutButtonActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void ConfirmAddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmAddButtonActionPerformed
         // TODO add your handling code here:
         String slang = jTextField3.getText().toUpperCase();
         String meansString = jTextField2.getText();
+        if(slang.equals("")){
+            JOptionPane.showMessageDialog(this,"Slang not null");
+            return;
+        }
+        if(meansString.equals("")){
+            JOptionPane.showMessageDialog(this,"Definition not null");
+            return;
+        }
         ArrayList<String> means = Dictionary.lineMeans(meansString);
         int flag = 0;
         if(data.checkExistence(slang) != 0){
@@ -959,6 +1020,7 @@ public class GUIdictionary extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Add Slang success");
         }
         if(flag != 1){
+            data.save(nameData);
             jTextField3.setText("");
             jTextField2.setText("");
             jTextArea1.setText(data.toString());
@@ -966,7 +1028,7 @@ public class GUIdictionary extends javax.swing.JFrame {
             HomeButton.doClick();
         }
         
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_ConfirmAddButtonActionPerformed
 
     private void AddSlangButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddSlangButtonActionPerformed
         // TODO add your handling code here:
@@ -1002,6 +1064,7 @@ public class GUIdictionary extends javax.swing.JFrame {
                 JOptionPane.QUESTION_MESSAGE);
         if(dialogResult == JOptionPane.YES_OPTION){
            data.removeSlang(slang);
+           data.save(nameData);
            JOptionPane.showMessageDialog(this,"Remove success");
         }
         jTextArea3.setText("");
@@ -1011,15 +1074,21 @@ public class GUIdictionary extends javax.swing.JFrame {
         HomeButton.doClick();
     }//GEN-LAST:event_RemoveButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void FindSlangButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FindSlangButtonActionPerformed
         // TODO add your handling code here:
         String slang = jTextField1.getText().toUpperCase();
+        if(slang.equals("")){
+            JOptionPane.showMessageDialog(this,"Search not null");
+            return;
+        }
         if(data.checkExistence(slang) != 0){
-            Dictionary.saveHistory(slang,nameHistory);
+            Dictionary.saveHistory("Find with Slang: " + slang,nameHistory);
             ArrayList<String> means = data.findSlang(slang);
             jTextArea3.setText(slang);
             jTextArea4.setText(Dictionary.meanstoString(means));
             
+            jTextArea3.setEnabled(false);
+            jTextArea4.setEnabled(false);
             jPanel3.removeAll();
         
             jPanel3.add(DetailSlang);
@@ -1029,9 +1098,10 @@ public class GUIdictionary extends javax.swing.JFrame {
             
         }
         else{
+            Dictionary.saveHistory("Find with Slang: " + slang + "(Not Found)",nameHistory);
             JOptionPane.showMessageDialog(this,"Not Found");
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_FindSlangButtonActionPerformed
 
     private void RandomButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RandomButtonActionPerformed
         // TODO add your handling code here:
@@ -1050,6 +1120,7 @@ public class GUIdictionary extends javax.swing.JFrame {
     private void ResetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetButtonActionPerformed
         // TODO add your handling code here:
         data.load(nameBackUp);
+        data.save(nameData);
         JOptionPane.showMessageDialog(this,"Reset Success");
         jTextArea1.setText(data.toString());
         jLabel5.setText(Integer.toString(data.countSlang()));
@@ -1060,6 +1131,10 @@ public class GUIdictionary extends javax.swing.JFrame {
         // TODO add your handling code here:
         String slang = jTextArea5.getText();
         String meansString = jTextField4.getText();
+        if(meansString.equals("")){
+            JOptionPane.showMessageDialog(this,"Difinition not null");
+            return;
+        }
         ArrayList<String> means = Dictionary.lineMeans(meansString);
         int dialogResult = JOptionPane.showConfirmDialog(this,
                 "Do you want edit this slang?","Warning",
@@ -1067,6 +1142,7 @@ public class GUIdictionary extends javax.swing.JFrame {
                 JOptionPane.QUESTION_MESSAGE);
         if(dialogResult == JOptionPane.YES_OPTION){
            data.replaceSlang(slang,means);
+           data.save(nameData);
            JOptionPane.showMessageDialog(this,"Edit success");
         }
         
@@ -1310,6 +1386,31 @@ public class GUIdictionary extends javax.swing.JFrame {
         jPanel3.revalidate();
     }//GEN-LAST:event_Game2ButtonActionPerformed
 
+    private void FindDefinitionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FindDefinitionButtonActionPerformed
+        // TODO add your handling code here:
+        String mean = jTextField1.getText();
+        if(mean.equals("")){
+            JOptionPane.showMessageDialog(this,"Search not null");
+            return;
+        }
+        ArrayList<String> slangs = data.findDefinition(mean);
+        if(slangs.size() == 0){
+            JOptionPane.showMessageDialog(this,"Not Found");
+            Dictionary.saveHistory("Find with definition: \"" + mean+"\" (Not Found)",nameHistory);
+        }
+        else{
+            Dictionary.saveHistory("Find with definition: \"" + mean+"\"",nameHistory);
+            jTextArea6.setText(data.slangstoString(slangs));
+            
+            jPanel3.removeAll();
+
+            jPanel3.add(FindDefinition);
+            jPanel3.repaint();
+            jPanel3.revalidate();
+            jTextField1.setText("");
+        }
+    }//GEN-LAST:event_FindDefinitionButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1353,10 +1454,14 @@ public class GUIdictionary extends javax.swing.JFrame {
     private javax.swing.JButton Answer2Button;
     private javax.swing.JButton Answer3Button;
     private javax.swing.JButton Answer4Button;
+    private javax.swing.JButton ConfirmAddButton;
     private javax.swing.JPanel DetailSlang;
     private javax.swing.JButton EditButton;
     private javax.swing.JButton EditConfirmButton;
     private javax.swing.JPanel EditSlang;
+    private javax.swing.JPanel FindDefinition;
+    private javax.swing.JButton FindDefinitionButton;
+    private javax.swing.JButton FindSlangButton;
     private javax.swing.JPanel Game;
     private javax.swing.JButton Game1Button;
     private javax.swing.JButton Game2Button;
@@ -1369,9 +1474,6 @@ public class GUIdictionary extends javax.swing.JFrame {
     private javax.swing.JButton RandomButton;
     private javax.swing.JButton RemoveButton;
     private javax.swing.JButton ResetButton;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1387,6 +1489,7 @@ public class GUIdictionary extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1408,6 +1511,8 @@ public class GUIdictionary extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -1420,11 +1525,13 @@ public class GUIdictionary extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextArea jTextArea5;
+    private javax.swing.JTextArea jTextArea6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
