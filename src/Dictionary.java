@@ -19,11 +19,14 @@ public class Dictionary {
     }
 
 
-    public void addSlang(String slang,String mean){
-        ArrayList<String> means = new ArrayList<>();
-        means.add(mean);
+    public void addSlang(String slang,ArrayList<String> means){
         this.data.put(slang,means);
     }
+
+    public void replaceSlang(String slang,ArrayList<String> means){
+        this.data.replace(slang,means);
+    }
+
 
     public void removeSlang(String slang){
         this.data.remove(slang);
@@ -51,6 +54,23 @@ public class Dictionary {
         return slang;
     }
 
+    public static ArrayList<String> lineMeans(String str){
+        ArrayList<String> means = new ArrayList<String>();
+        while(str.indexOf(',') != -1 ){
+            String mean = str.substring(0,str.indexOf(','));
+            str = str.substring(str.indexOf(',')+1);
+            if(mean.charAt(0) == ' '){
+                mean = mean.replace(" ","");
+            }
+            means.add(mean);
+        }
+        if(str.charAt(0) == ' '){
+            str = str.replace(" ","");
+        }
+        means.add(str);
+        return means;
+    }
+
     public void load(String nameFile){
         try{
             BufferedReader br = new BufferedReader(new FileReader(nameFile));
@@ -68,12 +88,28 @@ public class Dictionary {
         catch(IOException e){
         }
     }
+    public int checkExistence(String slang){
+        if(this.data.containsKey(slang)){
+            return 1;
+        }
+        return 0;
+    }
+
+    public static String meanstoString(ArrayList<String> means){
+        String result = "";
+        int i = 0;
+        for(; i < means.size() - 1;i++){
+            result += "- " + means.get(i) + "\n";
+        }
+        result += means.get(i);
+        return result;
+    }
 
     public ArrayList<String> findSlang(String slang){
         return this.data.get(slang);
     }
 
-    public void saveHistory(String slang,String nameFile){
+    public static void saveHistory(String slang,String nameFile){
         try{
             FileWriter fw = new FileWriter(nameFile);
             fw.write(slang + "\n");
@@ -83,7 +119,7 @@ public class Dictionary {
         }
     }
 
-    public ArrayList<String> loadHistory(String nameFile){
+    public static ArrayList<String> loadHistory(String nameFile){
         ArrayList<String> result = new ArrayList<String>();
         try{
             BufferedReader br = new BufferedReader(new FileReader(nameFile));
