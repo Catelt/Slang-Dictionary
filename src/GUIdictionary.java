@@ -131,6 +131,16 @@ public class GUIdictionary extends javax.swing.JFrame {
         jPanel25 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTextArea6 = new javax.swing.JTextArea();
+        About = new javax.swing.JPanel();
+        jPanel26 = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        jPanel27 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel26 = new javax.swing.JLabel();
+        jPanel28 = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         HomeButton = new javax.swing.JButton();
         AddSlangButton = new javax.swing.JButton();
@@ -820,6 +830,69 @@ public class GUIdictionary extends javax.swing.JFrame {
 
         jPanel3.add(FindDefinition, "card2");
 
+        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel24.setText("About Me");
+        jPanel26.add(jLabel24);
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel25.setText("MSSV: 19127373");
+        jPanel11.add(jLabel25);
+
+        jLabel26.setFont(new java.awt.Font("Times New Roman", 2, 24)); // NOI18N
+        jLabel26.setText("Thanks for using my application");
+        jPanel15.add(jLabel26);
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel27.setText("Name: Hồ Văn Duy");
+        jPanel28.add(jLabel27);
+
+        javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
+        jPanel27.setLayout(jPanel27Layout);
+        jPanel27Layout.setHorizontalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel27Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
+                    .addComponent(jPanel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel27Layout.setVerticalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel27Layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout AboutLayout = new javax.swing.GroupLayout(About);
+        About.setLayout(AboutLayout);
+        AboutLayout.setHorizontalGroup(
+            AboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AboutLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(AboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        AboutLayout.setVerticalGroup(
+            AboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AboutLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel3.add(About, "card2");
+
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         HomeButton.setText("Home");
@@ -979,6 +1052,11 @@ public class GUIdictionary extends javax.swing.JFrame {
 
     private void AboutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AboutButtonActionPerformed
         // TODO add your handling code here:
+        jPanel3.removeAll();
+        
+        jPanel3.add(About);
+        jPanel3.repaint();
+        jPanel3.revalidate();
     }//GEN-LAST:event_AboutButtonActionPerformed
 
     private void ConfirmAddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmAddButtonActionPerformed
@@ -1042,7 +1120,7 @@ public class GUIdictionary extends javax.swing.JFrame {
     private void EditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditButtonActionPerformed
         // TODO add your handling code here:
         String slang = jTextArea3.getText();
-        jTextArea5.setEnabled(false);
+        jTextArea5.setEditable(false);
         ArrayList<String> means = data.findSlang(slang);
         jTextArea5.setText(slang);
         jTextField4.setText(Dictionary.meanstoString2(means));
@@ -1087,8 +1165,8 @@ public class GUIdictionary extends javax.swing.JFrame {
             jTextArea3.setText(slang);
             jTextArea4.setText(Dictionary.meanstoString(means));
             
-            jTextArea3.setEnabled(false);
-            jTextArea4.setEnabled(false);
+            jTextArea3.setEditable(false);
+            jTextArea4.setEditable(false);
             jPanel3.removeAll();
         
             jPanel3.add(DetailSlang);
@@ -1109,7 +1187,8 @@ public class GUIdictionary extends javax.swing.JFrame {
         ArrayList<String> means = data.findSlang(slang);
         jTextArea3.setText(slang);
         jTextArea4.setText(Dictionary.meanstoString(means));
-
+        jTextArea3.setEditable(false);
+        jTextArea4.setEditable(false);
         jPanel3.removeAll();
 
         jPanel3.add(DetailSlang);
@@ -1447,6 +1526,7 @@ public class GUIdictionary extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel About;
     private javax.swing.JButton AboutButton;
     private javax.swing.JPanel AddSlang;
     private javax.swing.JButton AddSlangButton;
@@ -1490,6 +1570,10 @@ public class GUIdictionary extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1499,9 +1583,11 @@ public class GUIdictionary extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
@@ -1513,6 +1599,9 @@ public class GUIdictionary extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;

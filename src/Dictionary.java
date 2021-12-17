@@ -14,15 +14,29 @@ public class Dictionary {
         return this.data;
     }
 
-
+    /**
+     * Add slang in dictionary
+     * @param slang
+     * @param means
+     */
     public void addSlang(String slang,ArrayList<String> means){
         this.data.put(slang,means);
     }
 
+    /**
+     * replace means of slang
+     * @param slang
+     * @param means
+     */
     public void replaceSlang(String slang,ArrayList<String> means){
         this.data.replace(slang,means);
     }
 
+    /**
+     * add means of slang
+     * @param slang
+     * @param means
+     */
     public void duplicateSlang(String slang,ArrayList<String> means){
         ArrayList<String> check = this.data.get(slang);
         int size = check.size();
@@ -40,12 +54,18 @@ public class Dictionary {
         }
     }
 
-
+    /**
+     * remove on slangs
+     * @param slang
+     */
     public void removeSlang(String slang){
         this.data.remove(slang);
     }
 
-
+    /**
+     * return size of dictionary
+     * @return
+     */
     public int countSlang() {
         return this.data.size();
     }
