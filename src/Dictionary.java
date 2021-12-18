@@ -70,6 +70,13 @@ public class Dictionary {
         return this.data.size();
     }
 
+
+    /**
+     * read one line when we read file
+     * @param str
+     * @param means
+     * @return
+     */
     public static String readLine(String str, ArrayList<String> means){
         int index = str.indexOf('`');
         String slang = str.substring(0,index);
@@ -89,6 +96,11 @@ public class Dictionary {
         return slang;
     }
 
+    /**
+     * return to arrayList with one string
+     * @param str
+     * @return
+     */
     public static ArrayList<String> lineMeans(String str){
         ArrayList<String> means = new ArrayList<String>();
         while(str.indexOf('|') != -1 ){
@@ -106,6 +118,10 @@ public class Dictionary {
         return means;
     }
 
+    /**
+     * load file data
+     * @param nameFile
+     */
     public void load(String nameFile){
         try{
             BufferedReader br = new BufferedReader(new FileReader(nameFile));
@@ -124,6 +140,10 @@ public class Dictionary {
         }
     }
 
+    /**
+     * save file data
+     * @param nameFile
+     */
     public void save(String nameFile){
         try{
             FileWriter fw = new FileWriter(nameFile);
@@ -146,6 +166,11 @@ public class Dictionary {
 
     }
 
+    /**
+     * check existence one slang
+     * @param slang
+     * @return
+     */
     public int checkExistence(String slang){
         if(this.data.containsKey(slang)){
             return 1;
@@ -153,6 +178,12 @@ public class Dictionary {
         return 0;
     }
 
+    /**
+     * logic game check slang and definition
+     * @param slang
+     * @param mean
+     * @return
+     */
     public int checkValue(String slang,String mean){
         ArrayList<String> means = this.data.get(slang);
         if(means.contains(mean)){
@@ -161,6 +192,11 @@ public class Dictionary {
         return 0;
     }
 
+    /**
+     * to String definition
+     * @param means
+     * @return
+     */
     public static String meanstoString(ArrayList<String> means){
         String result = "";
         int i = 0;
@@ -171,6 +207,11 @@ public class Dictionary {
         return result;
     }
 
+    /**
+     * to String definiton another
+     * @param means
+     * @return
+     */
     public static String meanstoString2(ArrayList<String> means){
         String result = "";
         int i = 0;
@@ -181,10 +222,20 @@ public class Dictionary {
         return result;
     }
 
+    /**
+     * find Slang with slang word
+     * @param slang
+     * @return
+     */
     public ArrayList<String> findSlang(String slang){
         return this.data.get(slang);
     }
 
+    /**
+     * find slang with definition
+     * @param mean
+     * @return
+     */
     public ArrayList<String> findDefinition(String mean){
         ArrayList<String> slangs = new ArrayList<String>();
         for(String slang: this.data.keySet()){
