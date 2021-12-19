@@ -249,6 +249,11 @@ public class Dictionary {
         return slangs;
     }
 
+    /**
+     * to String array slang
+     * @param slangs
+     * @return
+     */
     public String slangstoString(ArrayList<String> slangs){
         String result = "";
         for(int i = 0; i < slangs.size();i++){
@@ -262,6 +267,11 @@ public class Dictionary {
         return result;
     }
 
+    /**
+     * save history find
+     * @param slang
+     * @param nameFile
+     */
     public static void saveHistory(String slang,String nameFile){
         try{
             BufferedWriter br = new BufferedWriter(new FileWriter(nameFile,true));
@@ -272,6 +282,11 @@ public class Dictionary {
         }
     }
 
+    /**
+     * load  history find
+     * @param nameFile
+     * @return
+     */
     public static ArrayList<String> loadHistory(String nameFile){
         ArrayList<String> result = new ArrayList<String>();
         try{
@@ -291,7 +306,10 @@ public class Dictionary {
     }
 
 
-
+    /**
+     * random one slang
+     * @return
+     */
     public String randomSlang(){
         Random generator = new Random();
         //Random
@@ -306,7 +324,10 @@ public class Dictionary {
         return slang;
     }
 
-
+    /**
+     * to String list slangs
+     * @return
+     */
     @Override
     public String toString(){
         String result = "";
