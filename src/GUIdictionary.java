@@ -17,7 +17,7 @@ public class GUIdictionary extends javax.swing.JFrame {
     private Dictionary data = new Dictionary();
     private String nameHistory = "history.txt";
     private String nameData = "slang.txt";
-    private String nameBackUp = "backup.txt";
+    private String nameDataObject = "serialization.bat";
     private int chooseGame = 0;
     /**
      * Creates new form GUIdictionary
@@ -26,8 +26,18 @@ public class GUIdictionary extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setTitle("Slang Dictionary");
-        data.load(nameData);
-        
+
+        //Load data
+        if(Dictionary.checkExistFle(nameDataObject)){
+            System.out.println("Hi");
+            data.loadOnject(nameDataObject);
+        }
+        else {
+            System.out.println("Hello");
+            data.load(nameData);
+            data.saveObject(nameDataObject);
+        }
+
         jTextArea1.setText(data.toString());
         jLabel5.setText(Integer.toString(data.countSlang()));
 
@@ -1108,7 +1118,8 @@ public class GUIdictionary extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Add Slang success");
         }
         if(flag != 1){
-            data.save(nameData);
+            //data.save(nameData);
+            data.saveObject(nameDataObject);
             jTextField3.setText("");
             jTextField2.setText("");
             jTextArea1.setText(data.toString());
@@ -1152,7 +1163,8 @@ public class GUIdictionary extends javax.swing.JFrame {
                 JOptionPane.QUESTION_MESSAGE);
         if(dialogResult == JOptionPane.YES_OPTION){
            data.removeSlang(slang);
-           data.save(nameData);
+//           data.save(nameData);
+           data.saveObject(nameDataObject);
            JOptionPane.showMessageDialog(this,"Remove success");
         }
         jTextArea3.setText("");
@@ -1208,8 +1220,9 @@ public class GUIdictionary extends javax.swing.JFrame {
 
     private void ResetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetButtonActionPerformed
         // TODO add your handling code here:
-        data.load(nameBackUp);
-        data.save(nameData);
+        data.load(nameData);
+        data.saveObject(nameDataObject);
+//        data.save(nameData);
         JOptionPane.showMessageDialog(this,"Reset Success");
         jTextArea1.setText(data.toString());
         jLabel5.setText(Integer.toString(data.countSlang()));
@@ -1231,7 +1244,8 @@ public class GUIdictionary extends javax.swing.JFrame {
                 JOptionPane.QUESTION_MESSAGE);
         if(dialogResult == JOptionPane.YES_OPTION){
            data.replaceSlang(slang,means);
-           data.save(nameData);
+           data.saveObject(nameDataObject);
+//           data.save(nameData);
            JOptionPane.showMessageDialog(this,"Edit success");
         }
         

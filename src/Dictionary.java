@@ -84,13 +84,7 @@ public class Dictionary {
         while(str.indexOf('|') != -1 ){
             String mean = str.substring(0,str.indexOf('|'));
             str = str.substring(str.indexOf('|')+1);
-            if(mean.charAt(0) == ' '){
-                mean = mean.replace(" ","");
-            }
             means.add(mean);
-        }
-        if(str.charAt(0) == ' '){
-            str = str.replace(" ","");
         }
         means.add(str);
         return slang;
@@ -106,13 +100,7 @@ public class Dictionary {
         while(str.indexOf('|') != -1 ){
             String mean = str.substring(0,str.indexOf('|'));
             str = str.substring(str.indexOf('|')+1);
-            if(mean.charAt(0) == ' '){
-                mean = mean.replace(" ","");
-            }
             means.add(mean);
-        }
-        if(str.charAt(0) == ' '){
-            str = str.replace(" ","");
         }
         means.add(str);
         return means;
@@ -123,6 +111,7 @@ public class Dictionary {
      * @param nameFile
      */
     public void load(String nameFile){
+        this.data.clear();
         try{
             BufferedReader br = new BufferedReader(new FileReader(nameFile));
             while(true){
@@ -132,11 +121,41 @@ public class Dictionary {
                 }
                 ArrayList<String> means = new ArrayList<String>();
                 String slang = Dictionary.readLine(str,means);
-                this.data.put(slang,means);
+                if(this.data.containsKey(slang)){
+                    for(int i = 0 ; i < means.size();i++){
+                        if(!this.data.get(slang).contains(means.get(i))){
+                            this.data.get(slang).add(means.get(i));
+                        }
+                    }
+                }
+                else{
+                    this.data.put(slang,means);
+                }
             }
             br.close();
         }
         catch(IOException e){
+            System.out.println("Error: " + e);
+        }
+    }
+
+    public static boolean  checkExistFle(String nameFile){
+        File tempFile = new File(nameFile);
+        return tempFile.exists();
+    }
+
+    /**
+     * deserializaion data
+     * @param nameFile
+     */
+    public void loadOnject(String nameFile){
+        try{
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(nameFile));
+            this.data = (HashMap<String, ArrayList<String>>) ois.readObject();
+            ois.close();
+        }
+        catch (IOException | ClassNotFoundException e){
+            System.out.println("Error: " + e);
         }
     }
 
@@ -162,8 +181,23 @@ public class Dictionary {
 
         }
         catch (IOException e){
+            System.out.println("Error: " + e);
         }
+    }
 
+    /**
+     * serialization data
+     * @param nameFile
+     */
+    public void saveObject(String nameFile){
+        try{
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(nameFile));
+            oos.writeObject(this.data);
+            oos.close();
+        }
+        catch (IOException e){
+            System.out.println("Error: " + e);
+        }
     }
 
     /**
