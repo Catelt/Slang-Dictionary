@@ -1,6 +1,8 @@
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.JOptionPane;
 
 /*
@@ -29,11 +31,9 @@ public class GUIdictionary extends javax.swing.JFrame {
 
         //Load data
         if(Dictionary.checkExistFle(nameDataObject)){
-            System.out.println("Hi");
             data.loadOnject(nameDataObject);
         }
         else {
-            System.out.println("Hello");
             data.load(nameData);
             data.saveObject(nameDataObject);
         }
@@ -41,14 +41,31 @@ public class GUIdictionary extends javax.swing.JFrame {
         jTextArea1.setText(data.toString());
         jLabel5.setText(Integer.toString(data.countSlang()));
 
+        //Set repeat random Slangs
+        autoRandomSlang();
+        int delay = 5000;
+        int period = 30000;
+        Timer timer = new Timer();
+
+        timer.scheduleAtFixedRate(new TimerTask() {
+            public void run() {
+                autoRandomSlang();
+            }
+        }, delay, period);
+    }
+
+    /**
+     * Auto random slang
+     */
+    private void autoRandomSlang(){
         String slang = data.randomSlang();
         String mean = data.getData().get(slang).get(0);
-        //check length mean
         while(mean.length() > 30){
             slang = data.randomSlang();
-            mean = data.getData().get(slang).get(0);   
+            mean = data.getData().get(slang).get(0);
         }
         jLabel2.setText("Do you know" +" \""+ slang +"\" is " + mean);
+
     }
 
     /**
