@@ -347,8 +347,7 @@ public class Dictionary {
     public String randomSlang(){
         Random generator = new Random();
         //Random
-        Set<String> keySet = this.data.keySet();
-        List<String> keyList = new ArrayList<>(keySet);
+        List<String> keyList = new ArrayList<>(this.data.keySet());
 
         int size = keyList.size();
         int index = new Random().nextInt(size);
@@ -374,11 +373,5 @@ public class Dictionary {
             result += data.get(slang).get(i) + "\n";
         }
         return result;
-    }
-
-    public static void main(String args[]){
-        Dictionary data = new Dictionary();
-        data.load("slang.txt");
-        data.save("output.txt");
     }
 }
